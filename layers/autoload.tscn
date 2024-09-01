@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3vlb47qout7s"]
+
+[ext_resource type="Script" path="res://addons/lib/layers/autoload.gd" id="1_kf67m"]
+[ext_resource type="Environment" uid="uid://bddxng37d1lgl" path="res://addons/defaults/world/default_world_environment.tres" id="2_gadgd"]
+
+[node name="Layers" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_kf67m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_gadgd")
+
+[node name="Background" type="CanvasLayer" parent="." groups=["background_layer"]]
+process_mode = 1
+layer = -1
+
+[node name="Game" type="CanvasLayer" parent="." groups=["game_layer"]]
+process_mode = 1
+layer = 2
+follow_viewport_enabled = true
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["hud_layer"]]
+process_mode = 1
+layer = 3
+
+[node name="Popup" type="CanvasLayer" parent="." groups=["popup_layer"]]
+process_mode = 1
+layer = 4
+follow_viewport_enabled = true
+
+[node name="Menu" type="CanvasLayer" parent="." groups=["menu_layer"]]
+process_mode = 3
+layer = 4
+
+[node name="Overlay" type="CanvasLayer" parent="." groups=["overlay_layer"]]
+process_mode = 3
+layer = 5

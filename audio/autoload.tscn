@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://x1w2be332tao"]
+
+[ext_resource type="Script" path="res://addons/lib/audio/autoload.gd" id="1_nc56c"]
+
+[node name="Audio" type="Node2D"]
+script = ExtResource("1_nc56c")
+
+[node name="Master" type="Node2D" parent="."]
+
+[node name="Test" type="AudioStreamPlayer" parent="Master"]
+
+[node name="BGM" type="Node2D" parent="."]
+
+[node name="Test" type="AudioStreamPlayer" parent="BGM"]
+bus = &"BGM"
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Test" type="AudioStreamPlayer" parent="SFX"]
+bus = &"SFX"
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Test" type="AudioStreamPlayer" parent="UI"]
+bus = &"UI"
+
+[node name="Focus" type="AudioStreamPlayer" parent="UI"]
+bus = &"UI"
+
+[node name="Press" type="AudioStreamPlayer" parent="UI"]
+bus = &"UI"

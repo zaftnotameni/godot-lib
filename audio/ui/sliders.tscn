@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5168gl3kh3as"]
+
+[ext_resource type="Script" path="res://addons/lib/audio/ui/sliders.gd" id="1_0l5xd"]
+
+[node name="AudioSliders" type="GridContainer"]
+offset_right = 226.0
+offset_bottom = 150.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 4
+columns = 3
+
+[node name="Master" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "Master"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="MasterValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "50"
+vertical_alignment = 1
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "Music"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BGMSlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="BGMValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "50"
+vertical_alignment = 1
+
+[node name="Sound Effects" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "Sound Effects"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="SFXValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "50"
+vertical_alignment = 1
+
+[node name="User Interface" type="Label" parent="."]
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "User Interface"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="UISlider" type="HSlider" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 50.0
+
+[node name="UIValue" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_spacing = 4
+text = "50"
+vertical_alignment = 1
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("1_0l5xd")
