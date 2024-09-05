@@ -2,6 +2,8 @@ class_name TreeUtil extends RefCounted
 
 static func scene_tree() -> SceneTree: return Engine.get_main_loop()
 static func current_scene() -> Node: return Engine.get_main_loop().current_scene
+static func physics_delta() -> float: return current_scene().get_physics_process_delta_time()
+static func process_delta() -> float: return current_scene().get_process_delta_time()
 
 static func first_in_group(group:='group_name', ignore_missing:=false) -> Node:
 	var node := scene_tree().get_first_node_in_group(group)

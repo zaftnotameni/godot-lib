@@ -1,7 +1,7 @@
 class_name StateMachine extends Node2D
 
-signal sig_state_will_transition(next:int, curr:int, prev:int)
-signal sig_state_did_transition(curr:int, prev:int)
+signal sig_state_will_transition(next:Node, curr:Node, prev:Node)
+signal sig_state_did_transition(curr:Node, prev:Node)
 
 enum MACHINE_MODE { None = 0, Physics, Normal }
 

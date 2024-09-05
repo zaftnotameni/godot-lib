@@ -2,7 +2,7 @@ class_name AtLayer extends Node2D
 
 @export var scene : PackedScene
 @export var named : String
-@export_enum('game_layer', 'background_layer', 'menu_layer', 'popup_layer', 'overlay_layer') var layer : String
+@export_enum('game_layer', 'background_layer', 'hud_layer', 'menu_layer', 'popup_layer', 'overlay_layer') var layer : String
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint(): return
@@ -33,5 +33,6 @@ static func at_game(node:Node): at_layer(node, 'game_layer')
 static func at_menu(node:Node): at_layer(node, 'menu_layer')
 static func at_popup(node:Node): at_layer(node, 'popup_layer')
 static func at_overlay(node:Node): at_layer(node, 'overlay_layer')
+static func at_hud(node:Node): at_layer(node, 'hud_layer')
 
 static func tree() -> SceneTree: return Engine.get_main_loop()
