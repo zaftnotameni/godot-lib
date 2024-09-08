@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3vlb47qout7s"]
 
 [ext_resource type="Script" path="res://addons/lib/layers/autoload.gd" id="1_kf67m"]
-[ext_resource type="Environment" uid="uid://bddxng37d1lgl" path="res://addons/defaults/world/default_world_environment.tres" id="2_gadgd"]
+[ext_resource type="Environment" uid="uid://bddxng37d1lgl" path="res://addons/defaults/environment/default_world_environment.tres" id="2_gadgd"]
 
 [node name="Layers" type="Node2D"]
 process_mode = 3

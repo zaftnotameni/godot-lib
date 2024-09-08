@@ -18,7 +18,7 @@ class_name CameraFollowsPlayer extends Node
 @export var follow_factor : float = 400
 @export var camera : Camera2D
 ## Group of the tilemap layer to use for defining camera boundaries
-@export var tilemap_layer_group : StringName
+@export var tilemap_layer_group : StringName = 'foreground_tiles'
 ## Group of the floor to use for defining camera boundaries
 @export var floor_group : StringName = 'floor_scene'
 ## Group of the player to use for resolving the player
@@ -109,6 +109,7 @@ var max_y : float = -1000000
 
 func setup_boundaries():
 	setup_floor_boundaries()
+	setup_tilemap_boundaries()
 
 func setup_floor_boundaries():
 	if not floor_group or floor_group.is_empty(): return
@@ -134,7 +135,7 @@ func setup_tilemap_boundaries():
 		min_y = min(min_y, glopos.y)
 		max_x = max(max_x, glopos.x)
 		max_y = max(max_y, glopos.y)
-	camera.limit_left = snappedi(roundi(min_x - 16 * 0.5), 16) + 8
-	camera.limit_right = snappedi(roundi(max_x + 16 * 0.5), 16) - 8
+	camera.limit_left = snappedi(roundi(min_x - 16 * 0.25), 16) + 4
+	camera.limit_right = snappedi(roundi(max_x + 16 * 0.25), 16) - 4
 	camera.limit_top = roundi(min_y - 16 * 0.25)
 	camera.limit_bottom = roundi(max_y + 16 * 0.25)
