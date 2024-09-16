@@ -1,6 +1,6 @@
 class_name ErrorUtil extends RefCounted
 
-static func all_required(source:Object, property_names:Array[String]=[]):
+static func all_required(source:Object, property_names:Array[String]=[]) -> bool:
 	if not source:
 		push_error('missing source')
 		return false
