@@ -1,4 +1,4 @@
-class_name Resolve extends RefCounted
+class_name ResolveUtil extends RefCounted
 
 const DEFAULT_COMPONENT_LOCATION := ^'Components'
 
@@ -53,3 +53,51 @@ static func resolve_at(node:Node,typ:Script,ignore_missing:=false) -> Node:
 		push_warning('tried to resolve missing component %s at %s' % [typ, node.get_path()])
 		return null
 
+static func or_owner(source:Object, property_name:String) -> Variant:
+	if not source:
+		push_error('missing source')
+		return null
+	if not source.owner:
+		push_error('missing source owner')
+		return null
+	if not property_name in source:
+		push_error('source does not have %s' % property_name)
+		return null
+	var existing = source.get(property_name)
+	if existing:
+		return existing
+	source.set(property_name, source.owner)
+	return source.get(property_name)
+
+static func or_parent(source:Object, property_name:String) -> Variant:
+	if not source:
+		push_error('missing source')
+		return null
+	var parent = source.get_parent()
+	if not parent:
+		push_error('missing source parent')
+		return null
+	if not property_name in source:
+		push_error('source does not have %s' % property_name)
+		return null
+	var existing = source.get(property_name)
+	if existing:
+		return existing
+	source.set(property_name, parent)
+	return source.get(property_name)
+
+static func or_callable(source:Object, property_name:String, callable:Callable) -> Variant:
+	if not source:
+		push_error('missing source')
+		return null
+	if not callable:
+		push_error('missing callable')
+		return null
+	if not property_name in source:
+		push_error('source does not have %s' % property_name)
+		return null
+	var existing = source.get(property_name)
+	if existing:
+		return existing
+	source.set(property_name, callable.call())
+	return source.get(property_name)
